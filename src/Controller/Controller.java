@@ -65,8 +65,14 @@ public class Controller implements ActionListener {
         this.jFrameUsuario = new JFrameUsuario();
         this.jFrameVerificacao = new JFrameVerificacao();
         
+        this.setComputadores();
+        this.setJogos();
+        this.setMemorias();
+        this.setPlacasVideo();
+        this.setProcessadores();
+        
         this.adicionarActionListeners();
-        this.jFrameInicial.setVisible(true);
+        this.jFrameInicial.setVisible(true);        
     }
 
     private void adicionarActionListeners() {
@@ -171,9 +177,13 @@ public class Controller implements ActionListener {
         int contAtende = 0;
         boolean atendeSO = false;
         for (int i = 0; i < 3; i++) {
-            if (this.jogoEscolhido.getReqSistemasOperacionais()[i].equals(Controller.computadorAtual.getSistemaOperacional())) {
-                atendeSO = true;
-                break;
+            try {
+                if (this.jogoEscolhido.getReqSistemasOperacionais()[i].equals(Controller.computadorAtual.getSistemaOperacional())) {
+                    atendeSO = true;
+                    break;
+                }                
+            } catch (NullPointerException e) {
+                i++;
             }
         }
         String[] unidadesMem = new String[]{"KB", "MB", "GB"};
@@ -350,11 +360,11 @@ public class Controller implements ActionListener {
         joinWhere.add(new String[]{"J.MIN_REQ_MEMORIA", "M.ID"});
         joinWhere.add(new String[]{"J.MIN_REQ_PLACA_VIDEO", "PV.ID"});
         ResultSet rs = this.dao.consultar(new String[]{"JOGO J", "MEMORIA M", "PLACA_VIDEO PV", "PROCESSADOR P"}, joinWhere, new String[]{"J.ID", "J.NOME", "J.DESCRICAO", "J.MIN_REQ_PROCESSADOR", "J.MIN_REQ_MEMORIA", "J.MIN_REQ_PLACA_VIDEO",
-            "J.REQ_SISTEMA_OPERACIONAL", "J.REQ_SISTEMA_OPERACIONAL_1", "J.REQ_SISTEMA_OPERACIONAL_2", "J.PRECISA_WIRELESS", "J.PRECISA_WEBCAM", "J.PRECO", "M.ID", "M.VALOR_CAPACIDADE", "M.UNIDADE_CAPACIDADE", "M.TECNOLOGIA", "M.FABRICANTE",
+            "J.REQ_SISTEMA_OPERACIONAL_1", "J.REQ_SISTEMA_OPERACIONAL_2", "J.REQ_SISTEMA_OPERACIONAL_3", "J.PRECISA_WIRELESS", "J.PRECISA_WEBCAM", "J.PRECO", "M.ID", "M.VALOR_CAPACIDADE", "M.UNIDADE_CAPACIDADE", "M.TECNOLOGIA", "M.FABRICANTE",
             "PV.ID", "PV.ID_PROCESSADOR", "PV.ID_MEMORIA", "PV.FABRICANTE", "P.ID", "P.VALOR_FREQUENCIA", "P.UNIDADE_FREQUENCIA", "P.NUMERO_NUCLEOS", "P.FABRICANTE"}, null, null, null);               
         try {
             while (rs.next()) {
-                String[] so = new String[]{rs.getString("J.REQ_SISTEMA_OPERACIONAL"), rs.getString("J.REQ_SISTEMA_OPERACIONAL_1"), rs.getString("J.REQ_SISTEMA_OPERACIONAL_2")};
+                String[] so = new String[]{rs.getString("J.REQ_SISTEMA_OPERACIONAL_1"), rs.getString("J.REQ_SISTEMA_OPERACIONAL_2"), rs.getString("J.REQ_SISTEMA_OPERACIONAL_3")};
                 Controller.jogos.add(new Jogo(rs.getInt("J.ID"), rs.getString("J.NOME"), rs.getString("J.DESCRICAO"),
                         new Processador(rs.getInt("P.ID"), rs.getFloat("P.VALOR_FREQUENCIA"), rs.getString("P.UNIDADE_FREQUENCIA"), rs.getInt("P.NUMERO_NUCLEOS"), rs.getString("P.FABRICANTE")),
                         new Memoria(rs.getInt("M.ID"), rs.getInt("M.VALOR_CAPACIDADE"), rs.getString("M.UNIDADE_CAPACIDADE"), rs.getString("M.TECNOLOGIA"), rs.getString("M.FABRICANTE")),
@@ -478,6 +488,7 @@ public class Controller implements ActionListener {
             this.jFrameAlterarSenha.dispose();
         } else if (source == this.jFrameComprarJogo.getjButtonFazerVerificacao()) {
             if (this.jFrameComprarJogo.getjTableJogos().getSelectedRow() >= 0 && Controller.computadorAtual != null) {
+                this.setJogos();
                 this.jogoEscolhido = Controller.jogos.get(this.jFrameComprarJogo.getjTableJogos().getSelectedRow());
                 this.compararComputadorJogo();
                 this.jFrameVerificacao.setVisible(true); 

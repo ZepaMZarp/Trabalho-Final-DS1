@@ -189,8 +189,12 @@ public class JFrameJogo extends javax.swing.JFrame {
             if (Controller.Controller.jogos.get(indice).getReqSistemasOperacionais() != null) {
                 String[][] dados = new String[3][1];
                 for (int i = 0; i < Controller.Controller.jogos.get(indice).getReqSistemasOperacionais().length; i++) {
-                    if (Controller.Controller.jogos.get(indice) != null && !Controller.Controller.jogos.get(indice).getReqSistemasOperacionais()[i].equals("null")) {
-                        dados[i][0] = Controller.Controller.jogos.get(indice).getReqSistemasOperacionais()[i];
+                    try {
+                        if (Controller.Controller.jogos.get(indice) != null && !Controller.Controller.jogos.get(indice).getReqSistemasOperacionais()[i].equals("null")) {
+                            dados[i][0] = Controller.Controller.jogos.get(indice).getReqSistemasOperacionais()[i];
+                        }                        
+                    } catch (NullPointerException e) {
+                        i++;
                     }
                 }
                 this.modelEscolhidos = new DefaultTableModel(dados, new String[]{"Escolhidos"});
