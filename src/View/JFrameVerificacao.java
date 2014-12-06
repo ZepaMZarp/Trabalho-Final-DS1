@@ -28,11 +28,15 @@ public class JFrameVerificacao extends javax.swing.JFrame {
         jLabelListaRequer2 = new javax.swing.JLabel();
         jLabelListaRequer3 = new javax.swing.JLabel();
         jLabelListaRequer4 = new javax.swing.JLabel();
+        jLabelListaRequer5 = new javax.swing.JLabel();
+        jLabelListaRequer6 = new javax.swing.JLabel();
         jPanelComputadorAtende = new javax.swing.JPanel();
         jLabelListaAtende1 = new javax.swing.JLabel();
         jLabelListaAtende2 = new javax.swing.JLabel();
         jLabelListaAtende3 = new javax.swing.JLabel();
         jLabelListaAtende4 = new javax.swing.JLabel();
+        jLabelListaAtende5 = new javax.swing.JLabel();
+        jLabelListaAtende6 = new javax.swing.JLabel();
         jButtonComprar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,6 +60,10 @@ public class JFrameVerificacao extends javax.swing.JFrame {
 
         jLabelListaRequer4.setText("jLabel1");
 
+        jLabelListaRequer5.setText("jLabel1");
+
+        jLabelListaRequer6.setText("jLabel1");
+
         javax.swing.GroupLayout jPanelRequerMelhorLayout = new javax.swing.GroupLayout(jPanelRequerMelhor);
         jPanelRequerMelhor.setLayout(jPanelRequerMelhorLayout);
         jPanelRequerMelhorLayout.setHorizontalGroup(
@@ -63,6 +71,8 @@ public class JFrameVerificacao extends javax.swing.JFrame {
             .addGroup(jPanelRequerMelhorLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(jPanelRequerMelhorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelListaRequer6)
+                    .addComponent(jLabelListaRequer5)
                     .addComponent(jLabelListaRequer4)
                     .addComponent(jLabelListaRequer3)
                     .addComponent(jLabelListaRequer2)
@@ -80,7 +90,11 @@ public class JFrameVerificacao extends javax.swing.JFrame {
                 .addComponent(jLabelListaRequer3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelListaRequer4)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelListaRequer5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelListaRequer6)
+                .addGap(16, 16, 16))
         );
 
         jPanelComputadorAtende.setBorder(javax.swing.BorderFactory.createTitledBorder("Seu computador atende"));
@@ -93,6 +107,10 @@ public class JFrameVerificacao extends javax.swing.JFrame {
 
         jLabelListaAtende4.setText("jLabel1");
 
+        jLabelListaAtende5.setText("jLabel1");
+
+        jLabelListaAtende6.setText("jLabel1");
+
         javax.swing.GroupLayout jPanelComputadorAtendeLayout = new javax.swing.GroupLayout(jPanelComputadorAtende);
         jPanelComputadorAtende.setLayout(jPanelComputadorAtendeLayout);
         jPanelComputadorAtendeLayout.setHorizontalGroup(
@@ -100,6 +118,8 @@ public class JFrameVerificacao extends javax.swing.JFrame {
             .addGroup(jPanelComputadorAtendeLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanelComputadorAtendeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelListaAtende6)
+                    .addComponent(jLabelListaAtende5)
                     .addComponent(jLabelListaAtende4)
                     .addComponent(jLabelListaAtende3)
                     .addComponent(jLabelListaAtende2)
@@ -117,6 +137,10 @@ public class JFrameVerificacao extends javax.swing.JFrame {
                 .addComponent(jLabelListaAtende3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelListaAtende4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelListaAtende5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelListaAtende6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -181,6 +205,38 @@ public class JFrameVerificacao extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public JLabel getjLabelListaAtende5() {
+        return jLabelListaAtende5;
+    }
+
+    public void setjLabelListaAtende5(JLabel jLabelListaAtende5) {
+        this.jLabelListaAtende5 = jLabelListaAtende5;
+    }
+
+    public JLabel getjLabelListaAtende6() {
+        return jLabelListaAtende6;
+    }
+
+    public void setjLabelListaAtende6(JLabel jLabelListaAtende6) {
+        this.jLabelListaAtende6 = jLabelListaAtende6;
+    }
+
+    public JLabel getjLabelListaRequer5() {
+        return jLabelListaRequer5;
+    }
+
+    public void setjLabelListaRequer5(JLabel jLabelListaRequer5) {
+        this.jLabelListaRequer5 = jLabelListaRequer5;
+    }
+
+    public JLabel getjLabelListaRequer6() {
+        return jLabelListaRequer6;
+    }
+
+    public void setjLabelListaRequer6(JLabel jLabelListaRequer6) {
+        this.jLabelListaRequer6 = jLabelListaRequer6;
+    }
+    
     public JLabel getjLabelListaAtende1() {
         return jLabelListaAtende1;
     }
@@ -263,6 +319,10 @@ public class JFrameVerificacao extends javax.swing.JFrame {
                 return this.getjLabelListaAtende3();
             case 4:
                 return this.getjLabelListaAtende4();
+            case 5:
+                return this.getjLabelListaAtende5();
+            case 6:
+                return this.getjLabelListaAtende6();                   
             default:
                 return null;
         }
@@ -278,6 +338,10 @@ public class JFrameVerificacao extends javax.swing.JFrame {
                 return this.getjLabelListaRequer3();
             case 4:
                 return this.getjLabelListaRequer4();
+            case 5:
+                return this.getjLabelListaRequer5();
+            case 6:
+                return this.getjLabelListaRequer6();                   
             default:
                 return null;
         }
@@ -294,10 +358,14 @@ public class JFrameVerificacao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelListaAtende2;
     private javax.swing.JLabel jLabelListaAtende3;
     private javax.swing.JLabel jLabelListaAtende4;
+    private javax.swing.JLabel jLabelListaAtende5;
+    private javax.swing.JLabel jLabelListaAtende6;
     private javax.swing.JLabel jLabelListaRequer1;
     private javax.swing.JLabel jLabelListaRequer2;
     private javax.swing.JLabel jLabelListaRequer3;
     private javax.swing.JLabel jLabelListaRequer4;
+    private javax.swing.JLabel jLabelListaRequer5;
+    private javax.swing.JLabel jLabelListaRequer6;
     private javax.swing.JLabel jLabelPerformance;
     private javax.swing.JLabel jLabelSeuJogoRodara;
     private javax.swing.JPanel jPanelComputadorAtende;

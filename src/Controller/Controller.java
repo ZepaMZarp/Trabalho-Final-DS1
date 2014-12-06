@@ -235,7 +235,7 @@ public class Controller implements ActionListener {
             }
         } else {
             valPVProcConvPC = this.jogoEscolhido.getMinReqPlacaVideo().getProcessador().getValorFrequencia();
-        }        
+        }
         if (atendeSO) {
             if (this.jogoEscolhido.getMinReqMemoria().getValorCapacidade() <= valMemConvPC) {
                 listaAtende.add("Memória (" + Controller.computadorAtual.getMemoria().getValorCapacidade() + Controller.computadorAtual.getMemoria().getUnidadeCapacidade() + " x " + this.jogoEscolhido.getMinReqMemoria().getValorCapacidade() + this.jogoEscolhido.getMinReqMemoria().getUnidadeCapacidade() + ")");
@@ -265,6 +265,24 @@ public class Controller implements ActionListener {
                 listaRequer.add("Processador - Placa de Vídeo (" + Controller.computadorAtual.getPlacaVideo().getProcessador().getValorFrequencia() + Controller.computadorAtual.getPlacaVideo().getProcessador().getUnidadeFrequencia() + " x " + this.jogoEscolhido.getMinReqPlacaVideo().getProcessador().getValorFrequencia() + this.jogoEscolhido.getMinReqPlacaVideo().getProcessador().getUnidadeFrequencia() + ")");
                 contRequer += 2;
             }            
+            if (this.jogoEscolhido.precisaWebcam()) {
+                if (Controller.computadorAtual.temWebcam()) {
+                    listaAtende.add("Webcam");
+                    contAtende++;
+                } else {
+                    listaRequer.add("Webcam");
+                    contRequer++;
+                }
+            }
+            if (this.jogoEscolhido.precisaWireless()) {
+                if (Controller.computadorAtual.temWireless()) {
+                    listaAtende.add("Wireless");
+                    contAtende++;
+                } else {
+                    listaRequer.add("Wireless");
+                    contRequer++;
+                }
+            }
         } else {
             listaRequer.add("Sistema Operacional");
         }
@@ -288,13 +306,13 @@ public class Controller implements ActionListener {
         for (int i = 0; i < listaRequer.size(); i++) {
             this.jFrameVerificacao.getjLabelListaRequer(i+1).setText(listaRequer.get(i));
         }
-        for (int i = listaRequer.size(); i < 4; i++) {
+        for (int i = listaRequer.size(); i < 6; i++) {
             this.jFrameVerificacao.getjLabelListaRequer(i+1).setText("");
         }
         for (int i = 0; i < listaAtende.size(); i++) {
             this.jFrameVerificacao.getjLabelListaAtende(i+1).setText(listaAtende.get(i));
         }        
-        for (int i = listaAtende.size(); i < 4; i++) {
+        for (int i = listaAtende.size(); i < 6; i++) {
             this.jFrameVerificacao.getjLabelListaAtende(i+1).setText("");
         }
     }
@@ -1430,7 +1448,7 @@ public class Controller implements ActionListener {
             this.jFrameResultadoPesquisa.dispose();
         } else if (source == this.jFrameVerificacao.getjButtonComprar()) {
             if (((this.getIndiceArray(new String[]{"RUIM", "MUITO RUIM", "NULA"}, this.jFrameVerificacao.getjLabelPerformance().getText()) >= 0) &&
-                JOptionPane.showConfirmDialog(null, "Você tem certeza que quer comprar o jogo? Ele apresentou uma performance " + this.jFrameVerificacao.getjLabelPerformance().getText() + " na nossa verificação...", "Deseja realmente comprar?", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) ||
+                JOptionPane.showConfirmDialog(null, "Você tem certeza que quer comprar o jogo? Ele apresentou uma performance " + (this.jFrameVerificacao.getjLabelPerformance().getText()).toLowerCase() + " na nossa verificação...", "Deseja realmente comprar?", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) ||
                 this.getIndiceArray(new String[]{"RUIM", "MUITO RUIM", "NULA"}, this.jFrameVerificacao.getjLabelPerformance().getText()) < 0) {
                 DecimalFormat fmt = new DecimalFormat("0.00");
                 JOptionPane.showMessageDialog(null, "Jogo comprado! Você recebeu uma nova conta de R$" + fmt.format(this.jogoEscolhido.getPreco()));

@@ -131,6 +131,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelListaRequer6" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelListaRequer5" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelListaRequer4" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelListaRequer3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelListaRequer2" min="-2" max="-2" attributes="0"/>
@@ -151,7 +153,11 @@
                       <Component id="jLabelListaRequer3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabelListaRequer4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabelListaRequer5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelListaRequer6" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -177,6 +183,16 @@
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JLabel" name="jLabelListaRequer5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelListaRequer6">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel1"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanelComputadorAtende">
@@ -194,6 +210,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelListaAtende6" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelListaAtende5" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelListaAtende4" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelListaAtende3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelListaAtende2" min="-2" max="-2" attributes="0"/>
@@ -214,6 +232,10 @@
                       <Component id="jLabelListaAtende3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabelListaAtende4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelListaAtende5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabelListaAtende6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -236,6 +258,16 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelListaAtende4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelListaAtende5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelListaAtende6">
               <Properties>
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
